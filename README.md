@@ -39,3 +39,5 @@ Ter Node Instalado
 `npm install`
 `npm run dev` para acessar o aplicativo em desenvolvimento 
 `Docker compose up` executar os dockers containers
+
+- partners 
