@@ -28,6 +28,14 @@ GymPAss Style App
 ## Tech Utilizadas
 - NodeJS
 - Typescript
-- SQL 
+- SQL (PostgreSQL)
 - fastify
 - zod
+- prisma ORM
+- docker
+
+## excetue
+Ter Node Instalado
+`npm install`
+`npm run dev` para acessar o aplicativo em desenvolvimento 
+`Docker compose up` executar os dockers containers
