@@ -33,6 +33,11 @@ GymPAss Style App
 - zod
 - prisma ORM
 - docker
+## tests
+- vitest
+- testes unitários
+- testes E2E
+- testes de integração
 
 ## excetue
 Ter Node Instalado
