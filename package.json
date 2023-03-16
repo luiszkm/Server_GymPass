@@ -10,6 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui",
     "lint": ""
   },
   "keywords": [],
@@ -19,6 +20,7 @@
     "@types/bcryptjs": "2.4.2",
     "@types/node": "^18.15.1",
     "@vitest/coverage-c8": "0.29.2",
+    "@vitest/ui": "0.29.2",
     "eslint": "8.36.0",
     "prisma": "4.11.0",
     "tsup": "^6.6.3",
