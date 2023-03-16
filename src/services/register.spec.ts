@@ -32,7 +32,7 @@ describe('Register Services', () => {
       '123456',
       user.password_hash,
     )
-    expect(isPasswordCorrectlyHashed).toBe(true)
+   await expect(isPasswordCorrectlyHashed).toBe(true)
 
   })
 
@@ -43,7 +43,7 @@ describe('Register Services', () => {
       email,
       password: '123456'
     })
-    expect(() =>
+   await expect(() =>
       sut.execute({
         name: 'test email twice',
         email,

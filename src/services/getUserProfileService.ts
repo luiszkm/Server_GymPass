@@ -1,6 +1,4 @@
-import { compare } from "bcryptjs";
 import { IUserRepository } from "../repositories/users-repository";
-import { InvalidCredentialsErro } from "./erros/invalid-credentials-error";
 import { UserModel } from "../models/userModel";
 import { ResourceNotFoundErro } from "./erros/resource-not-found-error";
 
@@ -23,7 +21,7 @@ export class GetUserProfileService {
     const user = await this.usersRepository.findById(userId)
 
     if(!user) throw new ResourceNotFoundErro()
-    
+
     return{
       user
     }
