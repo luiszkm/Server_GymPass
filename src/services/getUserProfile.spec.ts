@@ -25,8 +25,8 @@ describe('Get user Profile service', () => {
       userId: createdUser.id
     })
 
-    await expect(user.id).toEqual(expect.any(String))
-    await expect(user.name).toEqual('teste')
+     expect(user.id).toEqual(expect.any(String))
+     expect(user.name).toEqual('teste')
   })
 
   it('should not be able to get user profile with wrong id ', async () => {

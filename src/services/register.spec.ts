@@ -32,7 +32,7 @@ describe('Register Services', () => {
       '123456',
       user.password_hash,
     )
-   await expect(isPasswordCorrectlyHashed).toBe(true)
+    expect(isPasswordCorrectlyHashed).toBe(true)
 
   })
 

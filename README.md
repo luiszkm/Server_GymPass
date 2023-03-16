@@ -5,7 +5,7 @@ GymPAss Style App
 - [x] Deve ser possível se cadastrar
 - [x] Deve ser possível se autenticar
 - [x] Deve ser possível obter o perfil de um usuário logado
-- [ ] Deve ser possível obter o numero de check-ins realizados pelo usuário logado
+- [x] Deve ser possível obter o numero de check-ins realizados pelo usuário logado
 - [ ] Deve ser possível o usuário obter seu histórico de check-ins
 - [ ] Deve ser possível o usuário buscar academias próximas
 - [ ] Deve ser possível o usuário buscar academias pelo nome
@@ -14,7 +14,7 @@ GymPAss Style App
 - [ ] Deve ser possível cadastrar uma academia
 ## RNs
 - [x] O usuário nao deve poder se cadastrar com email duplicado
-- [] O usuário nao pode fazer 2 check-ins no mesmo dia
+- [x] O usuário nao pode fazer 2 check-ins no mesmo dia
 - [] O usuário nao pode fazer check-in se nao estiver perto (100m) da academia
 - [] O check-in só pode ser validado até 20 minutos após criado
 - [] o check-in só pode ser validado por administradores
@@ -38,6 +38,7 @@ GymPAss Style App
 - testes unitários
 - testes E2E
 - testes de integração
+- TDD
 
 ## excetue
 Ter Node Instalado
