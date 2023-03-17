@@ -1,5 +1,3 @@
-import { Gym } from "@prisma/client";
-import { UserModel } from "../models/userModel";
 import { IGymsRepository } from "../repositories/gyms-repository";
 import { GymModel } from "../models/gymModel";
 interface ICreateGymServiceRequest {
@@ -24,7 +22,6 @@ export class CreateGymService {
       latitude,
       longitude
     }: ICreateGymServiceRequest): Promise<ICreateGymResponse> {
-
 
     const gym = await this.gymsRepository.create({
       title,

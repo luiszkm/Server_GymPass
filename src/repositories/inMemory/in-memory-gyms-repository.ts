@@ -6,6 +6,12 @@ import { randomUUID } from "node:crypto";
 
 
 export class InMemoryGymsRepository implements IGymsRepository {
+  async searchMany(query: string , page: number) {
+    const initialPage = (page - 1) * 20
+    const finallyPage = page * 20
+    return this.items.filter(item => item.title.includes(query))
+    .slice(initialPage, finallyPage)
+  }
   public items: Gym[] = []
 
   async findById(id: string) {
