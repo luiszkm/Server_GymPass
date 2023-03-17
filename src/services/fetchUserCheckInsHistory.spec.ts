@@ -1,10 +1,6 @@
-import { expect, it, describe, beforeEach, vi, afterEach } from 'vitest'
+import { expect, it, describe, beforeEach} from 'vitest'
 import { InMemoryCheckInsRepository } from '../repositories/inMemory/in-memory-checkins-repository'
-import { CheckInService } from './checkInService'
-import { InMemoryGymsRepository } from '../repositories/inMemory/in-memory-gyms-repository'
 import { FetchUserCheckInsHistoryService } from './fetchUserCheckInsHistoryService'
-
-
 
 let checkInRepository: InMemoryCheckInsRepository
 let sut: FetchUserCheckInsHistoryService
@@ -44,7 +40,6 @@ describe('Fetch user check-in History service', () => {
         gym_id: `gym-${i}`,
         user_id: 'user-01',
       })
-
     }
 
     const { checkIns } = await sut.execute({
