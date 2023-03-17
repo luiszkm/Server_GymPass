@@ -2,7 +2,7 @@ import { hash } from "bcryptjs";
 import { IUserRepository } from "../repositories/users-repository";
 import { UserAlreadyExistsError } from "./erros/user-already-exists-error";
 import { UserModel } from "../models/userModel";
-interface IRegisterService {
+interface IRegisterServiceRequest {
   name: string
   email: string
   password: string
@@ -15,7 +15,7 @@ interface IRegisterServiceResponse {
 export class RegisterService {
   constructor(private usersRepository: IUserRepository) { }
 
-  async execute({ name, email, password }: IRegisterService): Promise<IRegisterServiceResponse> {
+  async execute({ name, email, password }: IRegisterServiceRequest): Promise<IRegisterServiceResponse> {
 
     const userWithSameEmail = await this.usersRepository.findByEmail(email)
 
