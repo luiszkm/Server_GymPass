@@ -4,7 +4,6 @@ import { IFindMayNearByParams, IGymsRepository } from "../gyms-repository";
 import { randomUUID } from "node:crypto";
 import { getDistanceBetweenCoordinates } from "../../utils/get-distance-between-coordinate";
 
-
 export class InMemoryGymsRepository implements IGymsRepository {
   async findManyNearBy(params: IFindMayNearByParams) {
     return this.items.filter(item => {
