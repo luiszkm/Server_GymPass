@@ -1,7 +1,6 @@
+import { app } from "@/app";
 import request from "supertest";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { app } from "../../app";
-
 describe('Authenticate Controller (e2e)', () => {
   beforeAll(async () => {
     await app.ready()

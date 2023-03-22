@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
-import { InvalidCredentialsErro } from '../../services/erros/invalid-credentials-error'
-import { makeAuthenticateService } from '../../services/factories/make-authenticate-service'
+import { InvalidCredentialsErro } from '../../../services/erros/invalid-credentials-error'
+import { makeAuthenticateService } from '../../../services/factories/make-authenticate-service'
 
 export async function authenticateController(request: FastifyRequest, reply: FastifyReply) {
   const authenticateBodySchema = z.object({
@@ -15,8 +15,8 @@ export async function authenticateController(request: FastifyRequest, reply: Fas
     const authenticateService = makeAuthenticateService()
 
     const { user } = await authenticateService.execute({ email, password })
-    const token = await reply.jwtSign({},{
-      sign:{
+    const token = await reply.jwtSign({}, {
+      sign: {
         sub: user.id
       }
     })
