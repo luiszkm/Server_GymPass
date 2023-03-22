@@ -47,7 +47,6 @@ export class InMemoryCheckInsRepository implements ICheckInsRepository {
     if (!checkInOnSameDate) return null
 
     return checkInOnSameDate
-
   }
 
   async create(data: Prisma.CheckInUncheckedCreateInput) {
@@ -62,7 +61,5 @@ export class InMemoryCheckInsRepository implements ICheckInsRepository {
 
     return checkIn
   }
-
-
 }
 
