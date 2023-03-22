@@ -5,17 +5,24 @@ export async function refreshController(request: FastifyRequest, reply: FastifyR
   await request.jwtVerify({
     onlyCookie: true,
   })
-  const token = await reply.jwtSign({}, {
-    sign: {
-      sub: request.user.sub
-    }
-  })
-  const refreshToken = await reply.jwtSign({}, {
-    sign: {
-      sub: request.user.sub,
-      expiresIn: '7d',
-    }
-  })
+
+  const { role } = request.user
+
+  const token = await reply.jwtSign(
+    { role },
+    {
+      sign: {
+        sub: request.user.sub,
+      }
+    })
+  const refreshToken = await reply.jwtSign(
+    { role },
+    {
+      sign: {
+        sub: request.user.sub,
+        expiresIn: '7d',
+      }
+    })
   return reply
     .setCookie('refreshToken', refreshToken, {
       path: '/',

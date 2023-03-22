@@ -1,15 +1,15 @@
 import dayjs from "dayjs";
-import { CheckInModel } from "../models/checkInModel";
 import { ICheckInsRepository } from "../repositories/check-ins-repository";
 import { ResourceNotFoundErro } from "./erros/resource-not-found-error";
 import { LateCheckInValidationError } from "./erros/late-check-in-validation-error";
+import { CheckIn } from "@prisma/client";
 
 interface IValidateCheckInServiceRequest {
   checkInId: string
 }
 
 interface IValidateCheckInServiceResponse {
-  checkIn: CheckInModel
+  checkIn: CheckIn
 }
 
 export class ValidateCheckInService {

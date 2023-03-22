@@ -10,15 +10,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  ADMIN
+  MEMBER
+}
+
 model User {
   id            String   @id @default(uuid())
   name          String
   email         String   @unique
   password_hash String
+  role          Role @default(MEMBER)
   created_at    DateTime @default(now())
 
-
   CheckIns CheckIn[]
+
   @@map("users")
 }
 
@@ -27,24 +33,23 @@ model CheckIn {
   created_at   DateTime  @default(now())
   validated_at DateTime?
   user_id      String
-  gym_id String
+  gym_id       String
 
+  user User @relation(fields: [user_id], references: [id])
+  gym  Gym  @relation(fields: [gym_id], references: [id])
 
-
-  user  User   @relation(fields: [user_id], references: [id])
-  gym   Gym    @relation(fields: [gym_id], references: [id])
   @@map("check_ins")
 }
 
 model Gym {
-  id          String    @id @default(uuid())
+  id          String  @id @default(uuid())
   title       String
   description String?
   phone       String?
   latitude    Decimal
   longitude   Decimal
 
+  CheckIns CheckIn[]
 
-  CheckIns     CheckIn[]
   @@map("gyms")
 }

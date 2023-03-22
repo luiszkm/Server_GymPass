@@ -15,12 +15,18 @@ export async function authenticateController(request: FastifyRequest, reply: Fas
     const authenticateService = makeAuthenticateService()
 
     const { user } = await authenticateService.execute({ email, password })
-    const token = await reply.jwtSign({}, {
+    const token = await reply.jwtSign(
+      {
+        role: user.role
+      }, {
       sign: {
         sub: user.id
       }
     })
-    const refreshToken = await reply.jwtSign({}, {
+    const refreshToken = await reply.jwtSign(
+      {
+        role: user.role
+      }, {
       sign: {
         sub: user.id,
         expiresIn: '7d',
@@ -28,16 +34,16 @@ export async function authenticateController(request: FastifyRequest, reply: Fas
     })
 
     return reply
-    .setCookie('refreshToken', refreshToken,{
-      path: '/',
-      secure: true,
-      sameSite: true,
-      httpOnly: true,
-    })
-    .status(200)
-    .send({
-      token
-    })
+      .setCookie('refreshToken', refreshToken, {
+        path: '/',
+        secure: true,
+        sameSite: true,
+        httpOnly: true,
+      })
+      .status(200)
+      .send({
+        token
+      })
 
   } catch (error) {
     if (error instanceof InvalidCredentialsErro) return reply.status(400).send({ message: error.message })

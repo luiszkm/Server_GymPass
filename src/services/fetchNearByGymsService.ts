@@ -1,6 +1,5 @@
 
 import { IGymsRepository } from "../repositories/gyms-repository";
-import { GymModel } from "../models/gymModel";
 import { Gym } from "@prisma/client";
 
 interface IFetchNearByGymsServiceRequest {
@@ -9,7 +8,7 @@ interface IFetchNearByGymsServiceRequest {
 }
 
 interface ICreateGymResponse {
-  gyms: GymModel[]
+  gyms: Gym[]
 }
 
 export class FetchNearByGymsService {

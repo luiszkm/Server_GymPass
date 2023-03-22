@@ -1,5 +1,4 @@
 import { IGymsRepository } from "../repositories/gyms-repository";
-import { GymModel } from "../models/gymModel";
 import { Gym } from "@prisma/client";
 
 interface ISearchGymsServiceRequest {

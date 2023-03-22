@@ -4,13 +4,10 @@ import { ResourceNotFoundErro } from "./erros/resource-not-found-error";
 
 interface IGetUserProfileServiceRequest {
   userId: string
-
 }
-
 interface IGetUserProfileServiceResponse {
   user:UserModel
 }
-
 
 export class GetUserProfileService {
   constructor(

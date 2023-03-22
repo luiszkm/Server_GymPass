@@ -1,5 +1,6 @@
 import { IGymsRepository } from "../repositories/gyms-repository";
 import { GymModel } from "../models/gymModel";
+import { Gym } from "@prisma/client";
 interface ICreateGymServiceRequest {
   title: string
   description: string | null
@@ -9,7 +10,7 @@ interface ICreateGymServiceRequest {
 }
 
 interface ICreateGymResponse {
-  gym: GymModel
+  gym: Gym
 }
 
 export class CreateGymService {

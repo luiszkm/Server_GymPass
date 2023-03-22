@@ -1,5 +1,4 @@
 import { ICheckInsRepository } from "../repositories/check-ins-repository";
-import { CheckIn } from "@prisma/client";
 
 interface IGetUserMetricsServiceRequest {
   userId: string

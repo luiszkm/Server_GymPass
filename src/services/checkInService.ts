@@ -1,3 +1,4 @@
+import { CheckIn } from "@prisma/client";
 import { CheckInModel } from "../models/checkInModel";
 import { ICheckInsRepository } from "../repositories/check-ins-repository";
 import { IGymsRepository } from "../repositories/gyms-repository";
@@ -14,7 +15,7 @@ interface ICheckInServiceRequest {
 }
 
 interface ICheckInServiceResponse {
-  checkIn: CheckInModel
+  checkIn: CheckIn
 }
 
 export class CheckInService {

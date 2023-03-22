@@ -2,6 +2,7 @@ import { compare } from "bcryptjs";
 import { IUserRepository } from "../repositories/users-repository";
 import { InvalidCredentialsErro } from "./erros/invalid-credentials-error";
 import { UserModel } from "../models/userModel";
+import { User } from "@prisma/client";
 
 interface IAuthenticateServiceRequest {
   email: string
@@ -10,7 +11,7 @@ interface IAuthenticateServiceRequest {
 }
 
 interface IAuthenticateServiceResponse {
-  user:UserModel
+  user:User
 }
 
 
