@@ -16,14 +16,14 @@ GymPAss Style App
 - [x] O usuário nao deve poder se cadastrar com email duplicado
 - [x] O usuário nao pode fazer 2 check-ins no mesmo dia
 - [x] O usuário nao pode fazer check-in se nao estiver perto (100m) da academia
-- [] O check-in só pode ser validado até 20 minutos após criado
-- [] o check-in só pode ser validado por administradores
-- [] A academia só pode ser cadastrada por Administradores
+- [x] O check-in só pode ser validado até 20 minutos após criado
+- [x] o check-in só pode ser validado por administradores
+- [x] A academia só pode ser cadastrada por Administradores
 ## RNFs
 - [x] A senha do usuário precisa estar criptografada
 - [x] Os dados da Aplicação precisa estar persistidos em um banco PostgreSQL
 - [x] Todas as listas de dados precisam estar paginadas com 20 itens por página
-- [] O usuário deve ser identificado por um JWT
+- [x] O usuário deve ser identificado por um JWT
 
 ## Tech Utilizadas
 - NodeJS
@@ -45,5 +45,3 @@ Ter Node Instalado
 `npm install`
 `npm run dev` para acessar o aplicativo em desenvolvimento 
 `Docker compose up` executar os dockers containers
-
-- partners 
