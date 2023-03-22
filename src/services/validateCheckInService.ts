@@ -1,10 +1,6 @@
 import dayjs from "dayjs";
 import { CheckInModel } from "../models/checkInModel";
 import { ICheckInsRepository } from "../repositories/check-ins-repository";
-import { IGymsRepository } from "../repositories/gyms-repository";
-import { getDistanceBetweenCoordinates } from "../utils/get-distance-between-coordinate";
-import { MaxDistanceErro } from "./erros/max-distance-error";
-import { MaxNumberOfCheckInsError } from "./erros/max-number-of-chec-ins-error";
 import { ResourceNotFoundErro } from "./erros/resource-not-found-error";
 import { LateCheckInValidationError } from "./erros/late-check-in-validation-error";
 
@@ -30,7 +26,7 @@ export class ValidateCheckInService {
     )
     if (distanceInMinutesFromCheckInCreation > 20) throw new LateCheckInValidationError()
 
-      checkIn.validated_At = new Date()
+      checkIn.validated_at = new Date()
 
     await this.checkInsRepository.save(checkIn)
 
