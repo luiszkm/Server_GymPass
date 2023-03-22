@@ -14,7 +14,7 @@ export async function gymsNearbyController(request: FastifyRequest, reply: Fasti
       return Math.abs(value) <= 180
     })
   })
-  const { latitude,longitude } = nearbyGymsQuerySchema.parse(request.params)
+  const { latitude,longitude } = nearbyGymsQuerySchema.parse(request.query)
   const fetchnearbyGymsService = makeFetchNearbyGymsService()
 
   const { gyms } = await fetchnearbyGymsService.execute({

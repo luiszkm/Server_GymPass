@@ -1,8 +1,8 @@
 import { verifyJWT } from "@/http/middlewares/verify-jwt";
 import { FastifyInstance } from "fastify";
-import { createGymController } from "./createGym";
-import { gymsNearbyController } from "./gymsNearby";
-import { searchGymController } from "./searchGyms";
+import { createGymController } from "./createGym.controller";
+import { gymsNearbyController } from "./gymsNearby.controller";
+import { searchGymController } from "./searchGyms.controller";
 
 
 export async function gymsRoutes(app: FastifyInstance) {
