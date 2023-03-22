@@ -13,9 +13,9 @@ jobs:
         ports:
          - 5432:5432
         env:
-          - POSTGRESQL_USERNAME=docker
-          - POSTGRESQL_PASSWORD=docker2023
-          - POSTGRESQL_DATABASE=apisolid
+          POSTGRESQL_PASSWORD: docker2023
+          POSTGRESQL_DATABASE: apisolid
+          POSTGRESQL_USERNAME: docker
 
 
     steps:
@@ -28,7 +28,6 @@ jobs:
 
 
       - run: npm ci
-
       - run: npm run test:e2e
         - env:
             JWT_SECRET: testing
