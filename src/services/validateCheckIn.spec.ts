@@ -28,8 +28,8 @@ describe('Validate Check-in service', () => {
     const { checkIn } = await sut.execute({
       checkInId: createdCheckIn.id
     })
-    expect(checkIn.validated_At).toEqual(expect.any(Date))
-    expect(checkInsRepository.items[0].validated_At).toEqual(expect.any(Date))
+    expect(checkIn.validated_at).toEqual(expect.any(Date))
+    expect(checkInsRepository.items[0].validated_at).toEqual(expect.any(Date))
   })
 
   it('should not be able to validated an inexistent check-in ', async () => {
