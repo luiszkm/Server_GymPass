@@ -16,7 +16,7 @@
     "test:e2e:watch": "vitest --dir src/http",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "lint": ""
+    "lint": "eslint --fix . --ext ts,tsx"
   },
   "keywords": [],
   "author": "",
