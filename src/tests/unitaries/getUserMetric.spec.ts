@@ -1,7 +1,7 @@
 
+import { GetUserMetricsService } from '@/services/getUserMetricsService'
 import { expect, it, describe, beforeEach} from 'vitest'
-import { InMemoryCheckInsRepository } from '../repositories/inMemory/in-memory-checkins-repository'
-import { GetUserMetricsService } from './getUserMetricsService'
+import { InMemoryCheckInsRepository } from '@/repositories/inMemory/in-memory-checkins-repository'
 
 let checkInRepository: InMemoryCheckInsRepository
 let sut: GetUserMetricsService

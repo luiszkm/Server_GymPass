@@ -1,9 +1,10 @@
 import { expect, it, describe, beforeEach, vi, afterEach } from 'vitest'
-import { InMemoryCheckInsRepository } from '../repositories/inMemory/in-memory-checkins-repository'
-import { InMemoryGymsRepository } from '../repositories/inMemory/in-memory-gyms-repository'
-import { ValidateCheckInService } from './validateCheckInService'
-import { ResourceNotFoundErro } from './erros/resource-not-found-error'
-import { LateCheckInValidationError } from './erros/late-check-in-validation-error'
+import { InMemoryCheckInsRepository } from '@/repositories/inMemory/in-memory-checkins-repository'
+import { InMemoryGymsRepository } from '@/repositories/inMemory/in-memory-gyms-repository'
+import { ValidateCheckInService } from '@/services/validateCheckInService'
+import { LateCheckInValidationError } from '@/services/erros/late-check-in-validation-error'
+import { ResourceNotFoundErro } from '@/services/erros/resource-not-found-error'
+
 
 let checkInsRepository: InMemoryCheckInsRepository
 let gymsRepository: InMemoryGymsRepository
