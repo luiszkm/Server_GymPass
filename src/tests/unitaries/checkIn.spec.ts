@@ -1,10 +1,11 @@
 import { expect, it, describe, beforeEach, vi, afterEach } from 'vitest'
-import { InMemoryCheckInsRepository } from '../repositories/inMemory/in-memory-checkins-repository'
-import { CheckInService } from './checkInService'
-import { InMemoryGymsRepository } from '../repositories/inMemory/in-memory-gyms-repository'
 import { Decimal } from '@prisma/client/runtime'
-import { MaxNumberOfCheckInsError } from './erros/max-number-of-chec-ins-error'
-import { MaxDistanceErro } from './erros/max-distance-error'
+import { InMemoryCheckInsRepository } from '@/repositories/inMemory/in-memory-checkins-repository'
+import { InMemoryGymsRepository } from '@/repositories/inMemory/in-memory-gyms-repository'
+import { CheckInService } from '@/services/checkInService'
+import { MaxNumberOfCheckInsError } from '@/services/erros/max-number-of-chec-ins-error'
+import { MaxDistanceErro } from '@/services/erros/max-distance-error'
+
 
 
 let checkInRepository: InMemoryCheckInsRepository
