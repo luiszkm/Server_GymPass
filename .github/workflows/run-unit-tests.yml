@@ -1,6 +1,9 @@
 name: Run Unit Tests
 
-on: [push]
+on: 
+  pull_request:
+    branches:
+      - main
 
 jobs:
   run-unit-tests:
@@ -17,6 +20,15 @@ jobs:
 
 
       - run: npm ci
+          
+      - run: npm run test:cov
+      - name: 'Report Coverage'
+        if: always() #Also generate the report if tests are failing
+        uses:  davelosert/vitest-coverage-report-action@v2  
 
-      - run: npm run test      
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   
 
